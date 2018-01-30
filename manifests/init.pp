@@ -5,8 +5,9 @@
 # === Parameters:
 # [*repo_branch*]
 #   (optional) fd.io repo branch.
-#   Valid values are 'release', 'master' and stable branch like 'stable.1609'.
-#   Defaults to 'release'.
+#   Valid values are undef, 'none', 'release', 'master' and stable branch like
+#   'stable.1609'. When set to undef or 'none', repo will not be installed.
+#   Defaults to undef.
 #
 # [*vpp_exec_commands*]
 #   (optional) array of VPP startup exec commands

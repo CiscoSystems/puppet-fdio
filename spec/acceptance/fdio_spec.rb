@@ -7,7 +7,7 @@ describe 'fdio' do
     it 'should work with no errors' do
       pp= <<-EOS
       class { '::fdio':
-        repo_branch => 'stable.1710'
+        repo_branch => 'release'
       }
       EOS
 
@@ -34,7 +34,7 @@ describe 'fdio' do
     it 'should work with no errors' do
       pp= <<-EOS
       class { '::fdio':
-        repo_branch => 'stable.1710',
+        repo_branch => 'release',
         vpp_cpu_main_core => '1',
         vpp_cpu_corelist_workers => '2',
         vpp_vhostuser_coalesce_frames => 32,

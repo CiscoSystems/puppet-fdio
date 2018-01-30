@@ -3,7 +3,7 @@
 # This class manages the default params for the fdio class.
 #
 class fdio::params {
-  $repo_branch = 'release'
+  $repo_branch = undef
   $vpp_exec_commands = undef
   $vpp_exec_file = '/etc/vpp/vpp-exec'
   $vpp_dpdk_support = true

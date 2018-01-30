@@ -3,7 +3,8 @@ require 'spec_helper'
 describe 'fdio' do
 
     let :params do
-      {}
+      { :repo_branch => 'release'
+      }
     end
 
   shared_examples_for 'fdio - default' do
@@ -33,7 +34,7 @@ describe 'fdio' do
         'enabled' => 1,
       )
     }
-    it { should contain_package('vpp').that_requires('Yumrepo[fdio-release]') }
+    it { should contain_package('vpp') }
 
     context 'with stable 16.09 branch' do
       let(:params) {{:repo_branch => 'stable.1609'}}
@@ -42,11 +43,33 @@ describe 'fdio' do
         should contain_yumrepo('fdio-stable.1609').with(
           'baseurl' => 'https://nexus.fd.io/content/repositories/fd.io.stable.1609.centos7/',
           'enabled' => 1,
-        )
+        ).that_notifies('Package[vpp]')
       }
-      it { should contain_package('vpp').that_requires('Yumrepo[fdio-stable.1609]') }
+      it { should contain_package('vpp') }
       it { should contain_package('vpp-plugins').that_requires('Package[vpp]') }
     end
+
+    context 'with empty repo' do
+      let(:params) {{:repo_branch => ''}}
+
+      it {
+        is_expected.not_to contain_class('yumrepo')
+      }
+      it { should contain_package('vpp') }
+      it { should contain_package('vpp-plugins').that_requires('Package[vpp]') }
+    end
+
+    context 'with none repo' do
+      let(:params) {{:repo_branch => 'none'}}
+
+      it {
+        is_expected.not_to contain_class('yumrepo')
+      }
+      it { should contain_package('vpp') }
+      it { should contain_package('vpp-plugins').that_requires('Package[vpp]') }
+    end
+
+
   end
 
   shared_examples_for 'fdio - config' do
