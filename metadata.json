@@ -1,6 +1,6 @@
 {
   "name": "puppet-fdio",
-  "version": "0.0.1",
+  "version": "18.01",
   "author": "Feng Pan <fpan@redhat.com>",
   "summary": "Puppet module for fdio projects",
   "license": "Apache-2.0",
