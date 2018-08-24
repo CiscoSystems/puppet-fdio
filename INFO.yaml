@@ -1,0 +1,56 @@
+---
+project: 'puppet-fdio'
+project_creation_date: '2016-11-04'
+project_category: ''
+lifecycle_state: 'Incubation'
+project_lead: &puppet-fdio_ptl
+    name: 'Feng Pan'
+    email: 'fpan@redhat.com'
+    id: 'fpan'
+    company: 'RedHat'
+    timezone: ''
+primary_contact: *puppet-fdio_ptl
+issue_tracking:
+    type: 'jira'
+    url: 'https://jira.fd.io/projects/PUP'
+    key: 'PUP'
+mailing_list:
+    type: 'groups.io'
+    url: 'https://lists.fd.io/g/puppet-fdio'
+    tag: ''
+realtime_discussion:
+    type: 'irc'
+    server: 'freenode'
+    channel: 'lf-releng'
+meetings:
+    - type: 'n/a'
+      agenda: 'n/a'
+      url: 'n/a'
+      server: 'n/a'
+      channel: 'n/a'
+      repeats: 'n/a'
+      time: 'n/a'
+repositories:
+    - 'puppet-fdio'
+committers:
+    - <<: *_ptl
+    - name: 'Feng Pan'
+      company: 'redhat'
+      email: 'fpan@redhat.com'
+      id: 'fpan'
+      timezone: ''
+    - name: 'Tim Rozet'
+      company: 'redhat'
+      email: 'trozet@redhat.com'
+      id: 'trozet'
+      timezone: ''
+tsc:
+    # yamllint disable rule:line-length
+    approval: ''
+    changes:
+        - type: 'removal'
+          name: ''
+          link: ''
+        - type: 'promotion'
+          name: ''
+          link: ''
